@@ -1,5 +1,10 @@
 # README for Puppeteer LinkedIn Automation Script
 
+![LinkedIn Automation](https://img.shields.io/badge/LinkedIn-Automation-blue?style=for-the-badge&logo=linkedin)
+
+![sending_connections](image/sending_connections.png)
+![result](image/result.png)
+
 ## Description
 This script automates various LinkedIn activities using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. It includes functionalities like logging in to LinkedIn, accepting connection requests, and sending out connection invitations.
 

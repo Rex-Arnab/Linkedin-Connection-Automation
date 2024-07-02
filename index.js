@@ -49,6 +49,16 @@ const scrollDown = async (page) => {
     const elements = await page.$$('.msg-overlay-bubble-header__controls.display-flex > *');
     await elements[2].click();
 
+    // scroll down to load more connections
+    for (let i = 0; i < 5; i++) {
+        await scrollDown(page);
+        await delay(1);
+    }
+    // back to top
+    await page.evaluate(_ => {
+        window.scrollTo(0, 0);
+    });
+
     // Accept all incoming connection requests
     const acceptButtons = await page.$$('button[aria-label^="Accept"]');
     if (acceptButtons.length === 0) {

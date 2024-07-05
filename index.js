@@ -83,19 +83,17 @@ const scrollDown = async (page) => {
 
     // Send all that can be sent
     let request_sent = 0;
-    const connection_buttons = await page.$$('button[aria-label^="Invite"]');
+    let connection_buttons = await page.$$('button[aria-label^="Invite"]');
     console.log(`Sending ${connection_buttons.length} connection requests`);
-    for (const connect_button of connection_buttons) {
+
+    while (request_sent <= process.env.NO_OF_CONNECTION_TO_SEND && connection_buttons.length > 0) {
+        const connect_button = connection_buttons[0];
         await connect_button.click();
         request_sent += 1;
         console.log('Request sent: ', request_sent);
-        if (request_sent >= process.env.NO_OF_CONNECTION_TO_SEND) {
-            break;
-        }
         await delay(1);
+        connection_buttons = await page.$$('button[aria-label^="Invite"]');
     }
-
-
 
     await browser.close();
 })();

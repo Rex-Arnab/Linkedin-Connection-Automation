@@ -8,6 +8,9 @@
 ## Description
 This script automates various LinkedIn activities using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. It includes functionalities like logging in to LinkedIn, accepting connection requests, and sending out connection invitations.
 
+## Known BUg
+- If a Message box appears while sending connection request, the script will not work properly.
+
 ## Features
 - **Automated Login**: Log in to LinkedIn using your credentials stored in environment variables.
 - **Connection Request Management**: Automatically accept incoming connection requests.
@@ -18,6 +21,8 @@ This script automates various LinkedIn activities using Puppeteer, a Node librar
 - Node.js
 - npm (Node package manager)
 - Google Chrome or Chromium browser
+
+# Caution - Do not send more then 30 connection request in a day. Linkedin may block your account for 1 week.
 
 ## Installation
 1. Clone the repository:
